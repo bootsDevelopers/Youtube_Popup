@@ -1,0 +1,174 @@
+<!--[if lt IE 8]>
+	<script type="text/javascript" src="pngfix.js"></script>
+<![endif]-->
+<link rel="stylesheet" href="/wcsstore/cmsassets/Boots/Library/Assets/Other/Fancy134jQ132/jq.fancy-1.3.4.css/jq.fancy-1.3.4.css" type="text/css" media="screen" />
+<script type="text/javascript" src="/wcsstore/cmsassets/Boots/Library/Assets/Other/Fancy134jQ132/jq.fancy-1.3.4.js/jq.fancy-1.3.4.js"></script>
+<script>
+$(document).ready(function() {
+	$('.midComponent a').each(function(){
+		//FIND THIS LINK
+		if($(this).attr('href') == 'http://www.youtube.com/watch?v=xi8onhydIf0')
+		{
+			//REPLACE WITH THIS
+			$(this).attr('href','http://www.youtube-nocookie.com/embed/lQ8xoMLtcto?rel=0&theme=light&autohide=0&autoplay=0&showinfo=1&wmode=opaque');
+			$(this).attr('id','inline');
+		}
+		else
+		{
+
+		}
+	});
+
+	$('#inline').attr('href', '#data')
+
+	function reloadIframe() {
+	//ALSO PUT IN YOUR YOUTUBE CODE HERE, BECAUSE OF A JQUERY 1.3 ISSUE WITH IFRAMES, THIS RELOADS THEM
+    jQuery('.iframeYoutubePlayer').attr('src','http://www.youtube-nocookie.com/embed/lQ8xoMLtcto?rel=0&theme=light&autohide=0&autoplay=0&showinfo=1&wmode=opaque');
+	}
+	
+	$("a#inline").fancybox({
+		'hideOnContentClick': true,
+		'padding': 18,
+		'scrolling': 'no',
+		width:560,
+		height:575,
+		autoScale:false,
+		autoDimensions:false,
+		'onClosed': reloadIframe
+	});
+});
+</script>
+
+
+<!-- Start of the content -->
+<div style="display:none"><div id="data">
+
+<style type="text/css">
+.overWrapper{width:545px;margin: 0 auto;}
+.productWrapper{font-family:Arial, sans-serif; width:545px; height:210px; float:left; display: block; border:1px solid #cccccc; border-radius:7px;}
+.productWrapper a{color:#3A3030; text-decoration:none;}
+.headerDiv{width:545px; height:20px; line-height:20px; color:#ffffff; font-size:110%; background:#326eb7; border-top-left-radius: 7px; border-top-right-radius: 7px;}
+.productList{width:545px; margin:0 auto;}
+.theProductWrappers{width:110px; height:152px; float:left; color:#211E1E;}
+.productWrapper1{margin-left:22px;}
+.productWrapper2,
+.productWrapper3,
+.productWrapper4{margin-left:20px;}
+.productCont{width:110px; height:112px; float:left;}
+</style>
+
+<div class="overWrapper">
+<iframe class="iframeYoutubePlayer" style="margin-bottom:23px;" src="http://www.youtube-nocookie.com/embed/xi8onhydIf0?rel=0&theme=light&autohide=0&autoplay=0&showinfo=1&wmode=opaque" allowfullscreen="" frameborder="0" height="337" width="545">
+</iframe>
+		
+<br style="clear:both; height:0px;" />
+		<center>
+			<div class="productWrapper">
+				<center>
+					<div class="headerDiv">Episode 12 -- Revlon - Britain & Ireland's Next Top Model</div>
+					<br style="clear:both; height:0px;">
+					<div class="productList">
+						<div class="theProductWrappers productWrapper1">
+							<a class="prod1" href="CMSContent/1253786" target="_blank"><!-- PRODUCT 1 CAT ID -->
+							<img class="productCont" src="http://boots.scene7.com/is/image/Boots/10137952?wid=80&op_sharpen=1"><!-- PRODUCT 1 Scene7 ID - Just change the ID -->
+							<p>Revlon ColorStay 16 Hour Eyeshadow</p></a><!-- PRODUCT 1 TITLE -->
+						</div>
+						<div class="theProductWrappers productWrapper2">
+							<a class="prod2" href="CMSContent/1251092" target="_blank" title="Revlon PhotoReady Airbrush Mousse Makeup"><!-- PRODUCT 2 CAT ID -->
+							<img class="productCont" src="http://boots.scene7.com/is/image/Boots/10137212?wid=80&op_sharpen=1"><!-- PRODUCT 2 Scene7 ID - Just change the ID -->
+							<p>Revlon PhotoReady Airbrush...</p></a><!-- PRODUCT 2 TITLE -->
+						</div>
+						<div class="theProductWrappers productWrapper3">
+							<a class="prod3" href="CMSContent/1262949" target="_blank"><!-- PRODUCT 3 CAT ID -->
+							<img class="productCont" src="http://boots.scene7.com/is/image/Boots/10140531?wid=80&op_sharpen=1"><!-- PRODUCT 3 Scene7 ID - Just change the ID -->
+							<p>Revlon PhotoReady Cream Blush</p></a><!-- PRODUCT 3 TITLE -->
+						</div>
+						<div class="theProductWrappers productWrapper4">
+							<a class="prod4" href="CMSContent/1228306" target="_blank"><!-- PRODUCT 4 CAT ID -->
+							<img class="productCont" src="http://boots.scene7.com/is/image/Boots/10130060?wid=80&op_sharpen=1"><!-- PRODUCT 4 Scene7 ID - Just change the ID -->
+							<p>Revlon Grow Luscious Lash Liner</p></a><!-- PRODUCT 4 TITLE -->
+						</div>
+					</div>
+					<br style="clear:both; height:0px;">
+				</center>
+			</div>
+		</center>
+		<br />
+	</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$.ajax({
+		type : "GET",
+		crossDomain:true,
+		url : "/webapp/wcs/stores/servlet/CreateCMSFlashXML?storeId=10052&langId=-1&catalogId=11051&CE_1=1253786", //<!-- PRODUCT 1 CAT ID AGAIN -->
+		dataType : "xml",
+		success: function(xml) {
+
+			$(xml).find('Product').each(function(){
+			var price = $(this).find('Retail_Price').text();
+			var id = $(this).find('CantentryId').text();
+			var priceOut = '<br style="clear:both; height:2px;" /><div class="priceOut"><b>£' + price + '</b></div>';
+			$('.prod1').append($(priceOut));
+			});
+		}
+	});
+});
+
+$(document).ready(function(){
+	$.ajax({
+		type : "GET",
+		crossDomain:true,
+		url : "/webapp/wcs/stores/servlet/CreateCMSFlashXML?storeId=10052&langId=-1&catalogId=11051&CE_1=1251092", //<!-- PRODUCT 2 CAT ID AGAIN -->
+		dataType : "xml",
+		success: function(xml) {
+
+			$(xml).find('Product').each(function(){
+			var price = $(this).find('Retail_Price').text();
+			var id = $(this).find('CantentryId').text();
+			var priceOut = '<br style="clear:both; height:2px;" /><div class="priceOut"><b>£' + price + '</b></div>';
+			$('.prod2').append($(priceOut));
+			});
+		}
+	});
+});
+
+$(document).ready(function(){
+	$.ajax({
+		type : "GET",
+		crossDomain:true,
+		url : "/webapp/wcs/stores/servlet/CreateCMSFlashXML?storeId=10052&langId=-1&catalogId=11051&CE_1=1262949", //<!-- PRODUCT 3 CAT ID AGAIN -->
+		dataType : "xml",
+		success: function(xml) {
+
+			$(xml).find('Product').each(function(){
+			var price = $(this).find('Retail_Price').text();
+			var id = $(this).find('CantentryId').text();
+			var priceOut = '<br style="clear:both; height:2px;" /><div class="priceOut"><b>£' + price + '</b></div>';
+			$('.prod3').append($(priceOut));
+			});
+		}
+	});
+});
+
+$(document).ready(function(){
+	$.ajax({
+		type : "GET",
+		crossDomain:true,
+		url : "/webapp/wcs/stores/servlet/CreateCMSFlashXML?storeId=10052&langId=-1&catalogId=11051&CE_1=1228306", //<!-- PRODUCT 4 CAT ID AGAIN -->
+		dataType : "xml",
+		success: function(xml) {
+
+			$(xml).find('Product').each(function(){
+			var price = $(this).find('Retail_Price').text();
+			var id = $(this).find('CantentryId').text();
+			var priceOut = '<br style="clear:both; height:2px;" /><div class="priceOut"><b>£' + price + '</b></div>';
+			$('.prod4').append($(priceOut));
+			});
+		}
+	});
+});
+</script>
+
+<!-- The End of Content -->
+</div></div>
